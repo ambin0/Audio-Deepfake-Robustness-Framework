@@ -1,0 +1,19 @@
+project:
+ name: audio-deepfake-robustness
+ seed: 42
+
+dataset: 
+ name: ASVspoof2019_LA
+
+Audio:
+ sample_rate: 16000
+
+stft:
+ frame_length_ms: 20
+ frame_shift_ms: 10
+ n_fft: 512
+ window: hamming
+
+training:
+ device: auto
+ 
