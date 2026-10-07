@@ -218,3 +218,22 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Dissertation datasets
+data/*
+!data/.gitkeep
+
+# Experiment outputs
+results/*
+!results/.gitkeep
+
+# Model checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
