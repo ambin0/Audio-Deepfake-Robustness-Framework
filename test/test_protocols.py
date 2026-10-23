@@ -16,7 +16,8 @@ def test_load_protocol(tmp_path):
 
     assert records[0]["speaker_id"] == "LA_0079"
     assert records[0]["utterance_id"] == "LA_T_1138215"
+    assert records[0]["system_id"] == "-"
     assert records[0]["label"] == "bonafide"
 
-    assert records[1]["attack_id"] == "A01"
+    assert records[1]["system_id"] == "A01"
     assert records[1]["label"] == "spoof"
