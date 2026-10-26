@@ -237,3 +237,5 @@ results/*
 
 # macOS
 .DS_Store
+# VS Code workspace files
+*.code-workspace
