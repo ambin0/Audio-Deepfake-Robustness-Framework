@@ -7,7 +7,7 @@ from src.features.stft import extract_log_power_stft
 def test_stft_output_is_tensor():
   waveform = np.zeros(16000)
   features = extract_log_power_stft(
-   wavefrom,
+   waveform,
    sample_rate=16000,
   )
   assert isinstance(features, torch.Tensor)

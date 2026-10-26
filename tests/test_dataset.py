@@ -1,39 +1,40 @@
-from pathlib import Path
-
 import numpy as np
 import pytest
 import soundfile as sf
 
 from src.data.dataset import ASVspoofDataset
 
+
 def test_train_partition_loads_audio(tmp_path):
-  sudio_dur = (
-    tmp_path
-    /"ASVspoof2019_LA_train"
-    /"flac"
-  )
+    audio_dir = (
+        tmp_path
+        / "ASVspoof2019_LA_train"
+        / "flac"
+    )
 
-audio_dir.mkdir(parents=True)
+    audio_dir.mkdir(parents=True)
 
-waveform = np.zeros(16000)
+    waveform = np.zeros(16000)
 
-audio_path = audio_dir / "LA_T_0000001.flac"
+    audio_path = audio_dir / "LA_T_0000001.flac"
 
-sf.write(
-  audio_path,
-  waveformm,
-  16000,
-)
-records = [
-  {
-    "speaker_id": "LA_0001",
+    sf.write(
+        audio_path,
+        waveform,
+        16000,
+    )
+
+    records = [
+        {
+            "speaker_id": "LA_0001",
             "utterance_id": "LA_T_0000001",
             "system_id": "-",
             "label": "bonafide",
-  }
-]
-dataset = ASVspoofDataset(
-   records=records,
+        }
+    ]
+
+    dataset = ASVspoofDataset(
+        records=records,
         dataset_root=str(tmp_path),
         partition="train",
     )
